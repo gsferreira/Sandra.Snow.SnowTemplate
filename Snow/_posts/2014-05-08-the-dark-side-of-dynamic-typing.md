@@ -4,7 +4,7 @@ title: The dark side of dynamic typing
 category: .NET
 ---
 
-[Dynamic typing](http://msdn.microsoft.com/en-us/library/dd264736.aspx) isn't nothing new in the .NET Framework world, he is available since .NET 4.0 and I'm sure that you have used it. If you didn't, you should take a spare of time for it. Dynamic typing is great because it let you get your work done faster and it can avoid some complicated reflection code, for example. I've been using it a lot but recently I've discovered his dark side... **the performance side**. 
+[Dynamic typing](http://msdn.microsoft.com/en-us/library/dd264736.aspx) isn't anything new in the .NET Framework world, he is available since .NET 4.0 and I'm sure that you have used it. If you didn't, you should take a spare of time for it. Dynamic typing is great because it let you get your work done faster and it may avoid some complicated reflection code, for example. I've used it a lot, but recently I've discovered his dark side... **the performance side**. 
 
 ![alt text](http://www.quickmeme.com/img/e8/e8e8d6ebfd29823854295376337528dc9853a26b27f43c85dd8eb0ed0ab666dc.jpg)
 <!--excerpt-->
@@ -63,4 +63,4 @@ With this piece of code inside a loop I got the following results. You can see t
 - Dynamic Object - GET - Elapsed=00:00:00.0000022
 - Dynamic Object - SET - Elapsed=00:00:00.0000022
 
-I'm not trying to tell you to keep a safty distance from dynamic typing, I'm just saying that if you're building an application where the performance is a key factor, where you don't need dynamic typing and you really need to pay attention to any fraction of second... so you should keep an eye on it. 
+I'm not trying to tell you to keep a safety distance from dynamic typing, I'm just saying that if you're building an application where the performance is a key factor, where you don't need dynamic typing and you really need to pay attention to any fraction of second... so you should keep an eye on it. 
