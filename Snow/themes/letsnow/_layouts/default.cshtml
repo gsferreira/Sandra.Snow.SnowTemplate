@@ -15,7 +15,13 @@
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
-    <title>Guilherme Ferreira</title>
+    <title>
+        @if(Model is Snow.ViewModels.PostViewModel)
+        {
+            <text>@(((Snow.ViewModels.PostViewModel)Model).Title) - </text>
+        }
+        Guilherme Ferreira
+    </title>
     <meta name="description" content="Guilherme Ferreira blog">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
