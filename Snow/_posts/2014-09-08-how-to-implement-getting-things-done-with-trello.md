@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How to implement Getting Things Done with Trello
+category: Productivity
 ---
 
 Today I want to tell you about one of my favorites productivity methodologies and about one of my favorite tools. Why both? Because they can work perfectly side by side.
