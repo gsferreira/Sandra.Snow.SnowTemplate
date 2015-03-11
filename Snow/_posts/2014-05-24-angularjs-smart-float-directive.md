@@ -15,9 +15,12 @@ My problem is that this directive doesn't solve my two problems:
 So, this is an improved directive based on Angular's *smart-float* directive.
 First, add the following directive to your application:
 
-    directive('smartFloat', function ($filter) {
-        var FLOAT_REGEXP_1 = /^\$?\d+(.\d{3})*(\,\d*)?$/; //Numbers like: 1.123,56
-        var FLOAT_REGEXP_2 = /^\$?\d+(,\d{3})*(\.\d*)?$/; //Numbers like: 1,123.56
+    myApp.directive('smartFloat', function ($filter) {
+        var FLOAT_REGEXP_1 = /^\$?\d+.(\d{3})*(\,\d*)$/; //Numbers like: 1.123,56
+        var FLOAT_REGEXP_2 = /^\$?\d+,(\d{3})*(\.\d*)$/; //Numbers like: 1,123.56
+        var FLOAT_REGEXP_3 = /^\$?\d+(\.\d*)?$/; //Numbers like: 1123.56
+        var FLOAT_REGEXP_4 = /^\$?\d+(\,\d*)?$/; //Numbers like: 1123,56
+
         return {
             require: 'ngModel',
             link: function (scope, elm, attrs, ctrl) {
@@ -28,11 +31,18 @@ First, add the following directive to your application:
                     } else if (FLOAT_REGEXP_2.test(viewValue)) {
                             ctrl.$setValidity('float', true);
                             return parseFloat(viewValue.replace(',', ''));
-                    } else {
+                    } else if (FLOAT_REGEXP_3.test(viewValue)) {
+                            ctrl.$setValidity('float', true);
+                            return parseFloat(viewValue);
+                    } else if (FLOAT_REGEXP_4.test(viewValue)) {
+                            ctrl.$setValidity('float', true);
+                            return parseFloat(viewValue.replace(',', '.'));
+                    }else {
                         ctrl.$setValidity('float', false);
                         return undefined;
                     }
                 });
+
                 ctrl.$formatters.unshift(
                    function (modelValue) {
                        return $filter('number')(parseFloat(modelValue) , 2);
@@ -41,6 +51,7 @@ First, add the following directive to your application:
             }
         };
     });
+
 
 
 Now, add the *smart-float* directive to your input:
@@ -62,6 +73,10 @@ This gives you what you need. Now, you can improve it showing to your users that
         </div>
     </form>
 
-You can see the working demo on [JSFiddle](http://jsfiddle.net/gsferreira/SCr6X/8/).
+You can see the working demo on [JSFiddle](http://jsfiddle.net/gsferreira/SCr6X/).
 
 I hope that this helps you.
+
+
+##UPDATE 2015-03-11
+Post has been updated with a fix to a bug that [Cooper Sellers](https://disqus.com/by/coopersellers/) found (you can see the details at the comment feed below).
