@@ -5,7 +5,7 @@ category: Azure, Revista PROGRAMAR
 ---
 
 
-*I had the pleasure of write an article to the Revista PROGRAMAR, a Portuguese collaborative magazine about programming. I’m glad with my first article for a magazine and especially because, I'm side by side with persons that I admire like Paulo Morgado or Sara Silva, for instance. This was an amazing experience and I want to share with you the result of it.*
+*I had the pleasure of write an [article](http://www.revista-programar.info/artigos/criar-uma-api-no-azure-app-sevice/) to the [Revista PROGRAMAR](http://www.revista-programar.info/anuncios/revista-programar-no-49-junho-2015/), a Portuguese collaborative magazine about programming. I’m glad with my first article for a magazine and especially because, I'm side by side with people that I admire like [Paulo Morgado](https://twitter.com/PauloMorgado) or [Sara Silva](https://twitter.com/saramgsilva), for instance. This was an amazing experience and I want to share with you the result of it.*
 
 
 ##Introduction
@@ -32,12 +32,12 @@ Before we start, we need to be sure that [Microsoft Azure SDK for .NET 2.6](http
 
 ###Create an API App project
 
-Let’s start to see how create a project for our API App.
+Let’s start to see how to create a project for our API App.
 
  1.	Open Visual Studio 2013;
  2.	Create a new project using **File > New Project**;
  3.	Choose the template **ASP.NET Web Application**;
- 4	Give a name to the project, in this case we will use MailApi;
+ 4.	Give a name to the project, in this case we will use MailApi;
  
  ![New Project](/images/create-an-api-in-azure-app-service-revista-programar-n49-1.png)
  
@@ -55,19 +55,21 @@ Let’s see how to expose a method for sending emails in our API. For that, we w
  1.	In the folder Models, add a new class with the name MailModel. Mouse right click in the folder Models, and select the option **Add > Class**.
  2.	In the created file, MailModel.cs, add the following code:
  <pre>
+   <code>
     using System.ComponentModel.DataAnnotations;
     public class MailModel
     {
-     [Required]
-     [EmailAddress]
-     public string To { get; set; }
-    
-     [Required]
-     public string Subject { get; set; }
-    
-     [Required]
-     public string Body { get; set; }
+       [Required]
+       [EmailAddress]
+       public string To { get; set; }
+      
+       [Required]
+       public string Subject { get; set; }
+      
+       [Required]
+       public string Body { get; set; }
     }
+    </code>
  </pre>
  3.	Add a controller to the project (controllers file) with the name MailController, using the template, **Web API 2 Controller – Empty**.
  
@@ -75,44 +77,46 @@ Let’s see how to expose a method for sending emails in our API. For that, we w
  
  4.	In the created file, **MailController.cs**, add the following method:
  <pre>
+   <code>
     using MailApi.Models;
     [HttpPost]
     public HttpResponseMessage Post([FromBody]MailModel data)
     {
-     using (var client = new System.Net.Mail.SmtpClient())
-     {
-     // create the message
-     var mailFrom = new System.Net.Mail.MailAddress("noreply@deathstar.com", "Death Star");
-     var mailTo = new System.Net.Mail.MailAddress(data.To);
-     var mail = new System.Net.Mail.MailMessage(mailFrom, mailTo);
-     
-     mail.Subject = data.Subject;
-     mail.Body = data.Body;
-     mail.IsBodyHtml = true;
-     
-     // send email
-     client.Send(mail);
-     }
-     return Request.CreateResponse(HttpStatusCode.OK);
+       using (var client = new System.Net.Mail.SmtpClient())
+       {
+         // create the message
+         var mailFrom = new System.Net.Mail.MailAddress("noreply@deathstar.com", "Death Star");
+         var mailTo = new System.Net.Mail.MailAddress(data.To);
+         var mail = new System.Net.Mail.MailMessage(mailFrom, mailTo);
+         
+         mail.Subject = data.Subject;
+         mail.Body = data.Body;
+         mail.IsBodyHtml = true;
+         
+         // send email
+         client.Send(mail);
+       }
+       return Request.CreateResponse(HttpStatusCode.OK);
     }
+    </code>
 </pre>
 ###Configure the service
 
 Since in this example we will send the e-mail via SMTP, we will need to configure the e-mail server data.
 
  1.	Access the **Web.config** file of our application;
- 2.	Add the following configuration (before the line </configuration>):
-
-<pre> 
-     <system.net>
-     <mailSettings>
-     <smtp from="noreply@deathstar.com">
-     <network host="mail.deathstar.com" port="587" userName="noreply@deathstar.com" password="#MayTheForceBeWithThisPassword!" enableSsl="true" />
-     </smtp>
-     </mailSettings>
-     </system.net>
+ 2.	Add the following configuration (before the line &lt;/configuration&gt;):
+ <pre>
+    <code> 
+       &lt;system.net&gt;
+         &lt;mailSettings&gt;
+           &lt;smtp from=&quot;noreply@deathstar.com&quot;&gt;
+            &lt;network host=&quot;mail.deathstar.com&quot; port=&quot;587&quot; userName=&quot;noreply@deathstar.com&quot; password=&quot;#MayTheForceBeWithThisPassword!&quot; enableSsl=&quot;true&quot; /&gt;
+           &lt;/smtp&gt;
+         &lt;/mailSettings&gt;
+       &lt;/system.net&gt;
+     </code>
  </pre>
-   
  3.	Fill in with the data from our server.
 
 
@@ -155,11 +159,11 @@ If you already have it, follow the next steps:
  
 Let’s see how to create an SDK to our API and use it.
 
- 1.	Add an Console Application to our solution;
+ 1.	Add a Console Application to our solution;
  
  ![Add console app](/images/create-an-api-in-azure-app-service-revista-programar-n49-8.png)
  
- 2.	In the Solution Explorer, right click in the Console Application e select the option **Add > Azure API App Client**;
+ 2.	In the Solution Explorer, right click in the Console Application and select the option **Add > Azure API App Client**;
  3.	In the presented dialog, pick the option **Download from Microsoft Azure API App** and select the MailApiService, create previously;
  
  ![Add Azure API App Client](/images/create-an-api-in-azure-app-service-revista-programar-n49-7.png)
@@ -168,21 +172,24 @@ Let’s see how to create an SDK to our API and use it.
  5.	When the last step is completed, we are ready to invoke our API, as the following code shows. 
 
 <pre>
+  <code>
   class Program
   {
-  static void Main(string[] args)
-  {
-  var client = new MailApiService();
-  var data = new Models.MailModel { To = "darth.vader@deathstar.com", Subject = "War Report", Body = "The Force awakens" };
-      
-  var response = client.Mail.Post(data);
-      
-  Console.WriteLine("Done!");
-  Console.ReadKey();
+    static void Main(string[] args)
+    {
+      var client = new MailApiService();
+      var data = new Models.MailModel { To = "darth.vader@deathstar.com", Subject = "War Report", Body = "The Force awakens" };
+          
+      var response = client.Mail.Post(data);
+          
+      Console.WriteLine("Done!");
+      Console.ReadKey();
+    }
   }
-  }
+</code>
 </pre>
 
 ##Summary
 
-With this new service created by Microsoft, we can provide features that in the past had a huge development cost, in an easy and quick way. The private gallery in conjunction with the easy way to consume APIs, provides the required capabilities to create an API ecosystem. 
+With this new service created by Microsoft, we are able to provide features that in the past had a huge development cost, in an easy and quick way. 
+The private gallery in conjunction with the easy way to consume APIs, provides the required capabilities to create an API ecosystem. 
