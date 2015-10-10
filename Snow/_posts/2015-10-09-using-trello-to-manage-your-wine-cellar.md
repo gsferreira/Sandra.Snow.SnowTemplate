@@ -15,7 +15,7 @@ This post wants to help you solve those problems, and manage your home cellar wi
 
 As a good Portuguese, I have a small wine cellar at home, where I store the excellent wines that we produce at Portugal.
 
-![Wine botle](/images/using-trello-to-manage-your-wine-cellar-cellar-1.jpg)
+![Wine botle](/images/using-trello-to-manage-your-wine-cellar-cellar1.jpg)
 
 I don't have many wine bottles, but I struggled with some questions that I can't answer:
 
@@ -36,7 +36,7 @@ I brought some **stickers, where I wrote letters** to name the columns **and num
 
 Now I can organize the bottles with the combination, for instance A1, C6, etc.
 
-![Wine cellar](/images/using-trello-to-manage-your-wine-cellar-cellar-2.jpg)
+![Wine cellar](/images/using-trello-to-manage-your-wine-cellar-cellar2.jpg)
 
 Then I created a **Trello board** for my wine cellar where I added **4 lists**:
 
@@ -61,7 +61,7 @@ For instance, you can create labels with price groups or a rating that you use t
 ![Final result](/images/using-trello-to-manage-your-wine-cellar-trello-2.png)
 
 
-![Final result](/images/using-trello-to-manage-your-wine-cellar-cellar-3.jpg)   
+![Final result](/images/using-trello-to-manage-your-wine-cellar-cellar3.jpg)   
 
 
 I hope that this helps you.
