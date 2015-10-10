@@ -9,30 +9,30 @@ Nothing too big, but the sufficient number of bottles to lose control?!
 
 Do you really know what you have in your cellar?
 
-This post wants to help you solve those problems and manage your home cellar with an amazing and free tool.
+This post wants to help you solve those problems, and manage your home cellar with an amazing and free tool.
 
 <!--excerpt-->
 
-As a good Portuguese I have a small wine cellar at home where I store the excellent wines that we produce at Portugal.
+As a good Portuguese, I have a small wine cellar at home, where I store the excellent wines that we produce at Portugal.
 
 ![Wine botle](/images/using-trello-to-manage-your-wine-cellar-cellar-1.jpg)
 
 I don't have many wine bottles, but I struggled with some questions that I can't answer:
 
-1. When I go to the supermarket how do I know if I need to buy white or red wine?
+1. When I go to the supermarket, how do I know if I need to buy white or red wine?
 2. How to remember to buy a specific wine?
 3. Which are the oldest bottles?
 4. How to choose a bottle?
 
 The conclusion was simple, **I need a system to manage it**.
 
-As you probably know I'm a huge fan of Trello and I trusted him to do the job.
+As you probably know, I'm a huge fan of Trello and I trusted him to do the job.
 If you don't know [Trello.com](https://trello.com/) you have here a description:
 >*"[Trello.com](https://trello.com/) is a collaboration tool that organizes your projects into boards. In one glance, Trello tells you what's being worked on, who's working on what, and where something is in a proces"*
 
 **How I did it?**
  
-I brought some **stickers where I wrote letters** to name the columns **and numbers** to stick in the rows. 
+I brought some **stickers, where I wrote letters** to name the columns **and numbers** to stick in the rows. 
 
 Now I can organize the bottles with the combination, for instance A1, C6, etc.
 
