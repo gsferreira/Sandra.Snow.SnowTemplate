@@ -1,6 +1,7 @@
 ---
 layout: post
-title: The shining new C# Scripting API 
+title: The shining new C# Scripting API
+category: .NET 
 ---
 
 **Say hello to the new Scripting Language: C#!**

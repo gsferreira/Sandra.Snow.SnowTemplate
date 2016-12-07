@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Azure WebJobs dependency injection with Unity 
+category: Azure
 ---
 
 In the early days of **Azure WebJobs** use **Dependency Injection** was a little bit tricky because the Triggered methods were only static methods.
