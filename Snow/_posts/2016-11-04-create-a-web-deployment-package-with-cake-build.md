@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Create a Web Deployment Package with Cake Build
-category: Node.js
+category: Cake
 ---
 
 This is simple tip to help you create Web Deployment Packages with [Cake](http://cakebuild.net/).
