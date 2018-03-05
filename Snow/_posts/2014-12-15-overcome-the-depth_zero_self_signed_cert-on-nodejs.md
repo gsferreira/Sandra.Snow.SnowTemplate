@@ -32,3 +32,8 @@ If you, like me, want to apply this rule only to a test/development environment,
 Now you are conditioning it to the environment that you want.
 
 Hope this helps.
+
+-------------------
+***UPDATE***
+
+If you are thinking about applying this to Production environments, please read the comments below.
