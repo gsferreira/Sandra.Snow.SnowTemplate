@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Versioning a .net Core applications using Cake
+title: Versioning .net Core applications using Cake
 category: Cake, .net, .net Core
 ---
 
