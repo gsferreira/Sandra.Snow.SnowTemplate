@@ -29,7 +29,7 @@ Use the spread operator. If you have a complex data structure, with multi-level 
 
 ---
 
-## 2. 💡 Only pass properties needed to the component
+## 💡 2. Only pass properties needed to the component
 
 **Make sure that you don't provide information that isn't needed to the child components. Try to only pass simple props with primitive types or functions.** If you pass a complex object and the child object only needs part of it, React will need to re-render the component. React will re-render every time that the props or the state change.
 
