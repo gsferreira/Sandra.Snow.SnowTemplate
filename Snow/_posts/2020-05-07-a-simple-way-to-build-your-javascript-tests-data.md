@@ -8,7 +8,7 @@ When writing Unit Tests, you will need to create test data objects for sure. Usu
 
 There's a pattern that I especially like when I'm doing this is C#. [The Builder Pattern](https://ardalis.com/improve-tests-with-the-builder-pattern-for-test-data).
 
-The builder pattern is an elegant solution to the problem and I really like it. But, is it the simple solution for JavaScript?
+The builder pattern is an elegant solution to the problem and I really like it. But, is it a simple solution for JavaScript?
 
 <!--excerpt-->
 
