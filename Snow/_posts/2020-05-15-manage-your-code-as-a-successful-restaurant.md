@@ -33,5 +33,3 @@ We can expand this concept to multiple software parts. High level, to a low leve
 A chef who creates new dishes every single night will create a few stunning dishes for sure. But also, a vast number of massive failures.
 
 Having a continuous improvement mindset is what makes us better than the rest.
-
-<!--excerpt-->
